@@ -1,0 +1,162 @@
+/* header styling */
+
+.page-header {
+  padding: 4.5em 0 3em 0;
+
+  .row {
+    justify-content: space-between;
+
+    .logo {
+      @include flex(row, flex-start, center);
+      gap: 1em;
+
+      h1 {
+        font-size: 3em;
+
+        a {
+          font-family: map-get($fonts, oleo);
+          padding: 0.25em 0.2em;
+          font-weight: map-get($font-weight, regular);
+          color: #fff;
+          background-color: map-get($colors, logo-bgc);
+          letter-spacing: 0.15em;
+          @extend %btn-brd-rad;
+
+        }
+      }
+
+      p {
+        font-family: map-get($fonts, open);
+        font-weight: map-get($font-weight, bold);
+        color: map-get($colors, text-color);
+        font-size: 0.825em;
+        letter-spacing: 0.02em;
+      }
+    }
+
+    .col-1 {
+      display: none;
+    }
+
+    .nav {
+      height: 100%;
+
+
+      ul {
+        @include flex(row, space-between, center);
+        height: 100%;
+
+        li {
+          flex-basis: 20%;
+          @include flex(row, center, center);
+        }
+
+        a {
+          width: 100%;
+          text-align: center;
+          padding: 0.5em 1em;
+          font-family: map-get($fonts, open);
+          font-weight: map-get($font-weight, bold);
+          color: map-get($colors, text-color);
+          font-size: 0.825em;
+          @extend %btn-brd-rad;
+          transition: .25s ease-in-out;
+
+          &:hover {
+            background-color: #fff;
+          }
+
+        }
+      }
+    }
+
+  }
+
+  @media (max-width: 1000px) {
+    .page-header {
+      position: relative;
+    }
+    .row {
+      .col-6 {
+        display: none;
+
+        &.active {
+          display: block;
+        }
+      }
+      .nav {
+        background-color: #fff;
+        box-shadow: 0 0 20px #eee;
+        ul {
+          @include flex(column, space-between, flex-start);
+        }
+      }
+
+      .logo {
+        @include flex(column, center, center);
+
+      }
+
+      .col-1 {
+        display: block;
+        position: absolute;
+        top: 1em;
+        left: 1em;
+
+      }
+
+      .burger {
+        height: 60px;
+        width: 60px;
+        position: relative;
+        background: rgba(0, 0, 0, 0.25);
+        border-radius: 6px;
+        cursor: pointer;
+
+        span {
+          position: absolute;
+          display: block;
+          width: 30px;
+          height: 4px;
+          background-color: #fff;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+          //transition: transform .5s .1s ease-in-out, opacity .5s ease-in-out;
+          transition:  .5s;
+        }
+
+        .top {
+          top: calc(50% - 10px);
+
+          &.active {
+            top: 50%;
+            transform: translate(-50%, -50%) rotate(45deg);
+
+          }
+        }
+
+        .middle {
+          opacity: 100%;
+          transition: .25s;
+
+          &.active {
+            opacity: 0;
+          }
+        }
+
+        .bottom {
+          top: calc(50% + 10px);
+
+          &.active {
+            top: 50%;
+            transform: translate(-50%, -50%) rotate(-45deg);
+
+          }
+        }
+
+
+      }
+    }
+  }
+}

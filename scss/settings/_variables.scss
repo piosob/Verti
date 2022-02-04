@@ -1,0 +1,61 @@
+@use "sass:map";
+
+$colors: (
+        main-bgc: #f0f0f0,
+        logo-bgc: #FC4887,
+        btn-color: #0090c5,
+        text-color: #444444,
+        text-footer-colo: #AAAAAAFF,
+        hamb-bgc: #00000033
+);
+
+$fonts: (
+        open: ('Open Sans', sans-serif),
+        oleo: ('Oleo Script', cursive)
+);
+
+$font-weight: (
+        bold: 800,
+        regular: 400,
+        light: 300
+);
+
+$font-sizes-mobile: (
+        logo: 40px,
+        logo-desc: 13px,
+        h1: 30px,
+        h1-dec: 22px,
+        btn: 18px,
+        h2: 20px,
+        h2-paragraph: 15px
+);
+
+%btn-brd-rad {
+  border-radius: 6px;
+}
+
+
+%txt-alg-cen {
+  text-align: center;
+}
+
+%ffopen {
+  font-family: 'Open Sans', 'sans-serif';
+}
+
+%flex {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+}
+%flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+@mixin flex($direction, $justify, $align) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+};

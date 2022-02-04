@@ -1,0 +1,77 @@
+/* footer styling */
+.footer {
+  font-family: map-get($fonts, open);
+  color: map-get($colors, text-color);
+  padding: 6em 0 8em 0;
+
+  .row > * {
+    padding: 1.5em 0 0 1.5em;
+  }
+
+  h3 {
+    font-size: 1.35em;
+    margin: 0 0 1em 0;
+    font-weight: map-get($font-weight, bold);
+  }
+
+  a {
+    line-height: 2em;
+    text-decoration: underline;
+  }
+
+  .socials {
+    @include flex(row, flex-start, center);
+    gap: .5em;
+
+    a {
+      font-size: 2.25em;
+    }
+
+    & + p {
+      line-height: 2em;
+    }
+
+  }
+
+  .row:nth-child(2) {
+    ul {
+      padding: 4em 0 0 0;
+      @include flex(row, center, center);
+      gap: 1em;
+      color: #aaa;
+    }
+
+    a {
+      display: inline;
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .footer {
+    padding: 6em 0 4em 0;
+
+
+    .row:nth-child(2) {
+      ul {
+        flex-direction: column;
+      }
+    }
+  }
+}
+
+
+@media (max-width: 600px) {
+  .footer {
+    padding: 2.5em 0;
+
+    .row > * {
+      padding: 1.5em 0 0 0;
+    }
+
+    .col-3 {
+      border-bottom: solid 1px #ccc;
+      padding-bottom: 2em;
+    }
+  }
+}

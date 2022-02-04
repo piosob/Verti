@@ -1,0 +1,87 @@
+/* features-banner styling */
+.features-banner {
+  padding: 3em 0;
+
+  .container {
+    @extend %btn-brd-rad;
+    box-shadow: 0px 3px 0px 0px rgb(0 0 0 / 5%);
+  }
+
+  .row {
+    margin: -2.5em 0 0 -2.5em;
+  }
+
+  .row > * {
+    padding: 2.5em 0 0 2.5em;
+  }
+
+  article, img {
+    @extend %btn-brd-rad;
+  }
+
+  article {
+    background-color: #fff;
+    line-height: 2.25em;
+    font-family: map-get($fonts, open);
+    color: map-get($colors, text-color);
+
+    img {
+      width: 100%;
+    }
+
+    .inner {
+      padding: 4em 2em 3em 2em;
+
+      h2 {
+        font-size: 1.35em;
+        font-weight: map-get($font-weight, bold);
+      }
+
+      header {
+        margin: 0 0 2em 0;
+      }
+    }
+  }
+}
+
+@media (max-width: 1280px) {
+  .features-banner {
+
+    .row {
+      margin: -1.5em 0 0 -1.5em;
+    }
+
+    .row > * {
+      padding: 1.5em 0 0 1.5em;
+    }
+
+  }
+}
+
+@media (max-width: 1000px) {
+  .features-banner {
+    .row {
+      margin: 0;
+    }
+
+    .row > * {
+      padding: 1.5em 0;
+    }
+
+    article {
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .features-banner {
+    padding: 1em 0;
+
+    article {
+      .inner {
+        padding: 1.8em 1em;
+      }
+    }
+  }
+}

@@ -1,0 +1,121 @@
+/* banner styling */
+.banner {
+
+
+  .container {
+    padding: 4.5em;
+    background-color: #fff;
+    @extend %btn-brd-rad;
+    box-shadow: 0px 3px 0px 0px rgb(0 0 0 / 5%);
+  }
+
+  .row > * {
+    padding: 2.5em 0 0 2.5em;
+    @media (max-width: 1280px) {
+      padding: 1.5em 0 0 1.5em;
+    }
+    @media (max-width: 600px) {
+      padding: 1em 0 0 1em;
+    }
+  }
+
+  .col-7 {
+    h2, p {
+      font-family: map-get($fonts, open);
+      color: map-get($colors, text-color);
+    }
+
+    h2 {
+      font-size: 3.5em;
+      margin: 0.1em 0 0.35em 0;
+      font-weight: map-get($font-weight, bold);
+    }
+
+    p {
+      font-size: 2.75em;
+      font-weight: map-get($font-weight, light);
+    }
+  }
+
+  .col-5 {
+    @include flex(column, center, center);
+
+    & a:nth-of-type(1) {
+      background-color: map-get($colors, btn-color);
+      color: #fff;
+    }
+
+    & :nth-child(2) {
+      background-color: rgba(0, 0, 0, 0.05);
+      color: map-get($colors, text-color);
+    }
+
+    a {
+      font-family: map-get($fonts, open);
+      color: map-get($colors, text-color);
+      font-weight: map-get($font-weight, bold);
+      height: 50%;
+      @include flex(row, space-between, center);
+      @extend %btn-brd-rad;
+      padding: 0.8em 0.9em;
+      width: 100%;
+      margin-bottom: 0.5em;
+      background-color: #ddd;
+      font-size: 2.25em;
+
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .banner {
+    .container {
+      padding: 4.5em 3em;
+    }
+
+    .col-7 {
+      p {
+        text-align: center;
+      }
+    }
+
+    .col-5 {
+      a {
+        justify-content: center;
+      }
+
+      i {
+        order: -1;
+        margin-right: 0.5em;
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .banner {
+    font-size: 8px;
+
+    .container {
+      padding: 1em;
+
+    }
+
+    .col-7 {
+      p {
+        text-align: center;
+      }
+    }
+
+    .col-5 {
+      a {
+        justify-content: center;
+      }
+
+      i {
+        order: -1;
+        margin-right: 0.5em;
+      }
+    }
+  }
+}
